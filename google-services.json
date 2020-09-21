@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "953622185241",
+    "firebase_url": "https://vizinhosolidario-mobile.firebaseio.com",
+    "project_id": "vizinhosolidario-mobile",
+    "storage_bucket": "vizinhosolidario-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953622185241:android:0cb4ac6ea8551f589c7188",
+        "android_client_info": {
+          "package_name": "com.fabrica.vizinhosolidario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953622185241-gecvqh45jjl891c4lhjf30sou7sfcpf7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH8U81TEQ8RynapG-i1Ai4-OrBSxbiVHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953622185241-gecvqh45jjl891c4lhjf30sou7sfcpf7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
