@@ -81,33 +81,13 @@ export default function SignIn(){
                     alignItems: 'center',
                   }}
                 >
-                  <View style={{ flexDirection: 'row' }}>
-                    <RectButton
-                      style={styles.infoSociaisButton}
-                      onPress={handleOpenLinkTwitter}
-                    >
-                      <Twitter size={20} />
-                    </RectButton>
-                    <RectButton
-                      style={styles.infoSociaisButton}
-                      onPress={handleOpenLinkFacebook}
-                    >
-                      <Facebook size={20} />
-                    </RectButton>
-                    <RectButton
-                      style={styles.infoSociaisButton}
-                      onPress={handleOpenLinkInstagram}
-                    >
-                      <Instagram size={20} />
-                    </RectButton>
-                  </View>
                   <View style={styles.infoCopyrightContainer}>
                     <Text style={styles.infoCopyrightText}>
-                      Copyright © {`${today.getFullYear()}`} | Todos os direitos reservados - SysCor
+                      Copyright © {`${today.getFullYear()}`} | Todos os direitos reservados
                     </Text>
                   </View>
                   <View style={{ marginTop: hp('2%'), marginBottom: hp('4%') }}>
-                    <RectButton onPress={handleOpenLinkBefore}>
+                    <RectButton onPress={}>
                       <Before width="100px" height="40px" />
                     </RectButton>
                   </View>
