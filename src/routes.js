@@ -12,7 +12,7 @@ import SignIn from '~/screens/Auth/SignIn';
  * Drawer Routes Components
  */
 import Main from '~/screens/Main';
-import Notification from '~/screens/Cadastro';
+import Cadastro from '~/screens/Cadastro';
 
 /**
  * Page Remove Drawer Menu
@@ -49,10 +49,10 @@ export const AppDrawer = drawerPosition =>
           ),
         },
       },
-      Notification: {
-        screen: Notification,
+      Cadastro: {
+        screen: Cadastro,
         navigationOptions: {
-          title: 'Notificações',
+          title: 'Cadastro',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
             <DrawerIcon name="bell" size={16} color={tintColor} />

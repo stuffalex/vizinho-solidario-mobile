@@ -283,7 +283,7 @@ export default function SignIn({ navigation, children }) {
             <View style={styles.buttonCadastrar}>
               <ButtonGradient
               onPress={() => {
-                navigation.navigate('Notification');
+                navigation.navigate('Cadastro');
               }}
                 name="Cadastrar"
                 upper

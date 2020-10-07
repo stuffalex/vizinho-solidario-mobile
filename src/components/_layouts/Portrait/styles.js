@@ -78,22 +78,4 @@ export const ButtonLogoDrawer = styled.TouchableOpacity`
   top: 5%;
   bottom: 40.45%;
 `;
-export const CircleNotificationCounter = styled.View`
-  background-color: red;
-  position: absolute;
-  height: 14px;
-  width: 14px;
-  border-radius: 50px;
-  align-items: center;
-  justify-content: center;
-`;
-export const NotificationCounter = styled.Text`
-  font-style: normal;
-  top: ${Platform.OS === 'ios' ? '15px' : '14px'};
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  font-size: 8px;
-  line-height: 11px;
-  color: #ffffff;
-`;
+
