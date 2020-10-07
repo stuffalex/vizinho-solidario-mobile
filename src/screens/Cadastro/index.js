@@ -10,8 +10,6 @@ import Header from '~/components/Header';
 import {
   Container,
   ListWrapper,
-  TextNotificationError,
-  ContainerText,
 } from './styles';
 
 export function Notification({ navigation, isFocused }) {
@@ -32,13 +30,6 @@ export function Notification({ navigation, isFocused }) {
     function cleanup() {
       if (!isFocused) {
         setLoading(true);
-        setNotReadNotification(true);
-        setAllNotification(false);
-        setArchivedNotification(false);
-        setErrorMessageArchived(false);
-        setErrorMessageNotRead(false);
-        setErrorMessageAll(false);
-        setNotify([]);
       }
     }
 
