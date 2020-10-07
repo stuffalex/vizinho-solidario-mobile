@@ -10,7 +10,6 @@ import {
   Dimensions,
 } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
-import { deviceName as expoDeviceName } from 'expo-device';
 import { Linking, Notifications, ScreenOrientation } from 'expo';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -24,11 +23,8 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { authRequest, authError, authFailure } from '~/store/modules/auth/actions';
 import { statusBarHide } from '~/store/modules/settings/actions';
 // Utils
-import estados from '~/utils/ufs';
 import colors from '~/styles/colors';
 import Logo from '~/components/Svg/Logo';
-import ErrorIcon from '~/components/Svg/ErrorMessage';
-import SelectMenu from '~/components/MenuPopup';
 import Input from '~/components/Input';
 import ButtonGradient from '~/components/Buttons/ButtonGradient';
 
@@ -287,7 +283,6 @@ export default function SignIn({ navigation, children }) {
               }}
                 name="Cadastrar"
                 upper
-                // onPress={handleSubmit}
                 loading={loading}
               />
             </View>
