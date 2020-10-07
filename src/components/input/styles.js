@@ -12,7 +12,7 @@ export const Container = styled.View`
   align-items: center;
 `;
 export const TextInput = styled.TextInput.attrs(props => ({
-  placeholderTextColor: 'rgba(255,255,255, 0.6)',
+  placeholderTextColor: '#929494',
   secureTextEntry: props.password,
 }))`
   flex: 1;
