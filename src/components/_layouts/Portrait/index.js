@@ -29,18 +29,6 @@ export default function Layout({ navigation, children }) {
     layoutPortrait();
   }, []);
 
-  useEffect(() => {
-    async function numberNotification() {
-      try {
-        const { API_NOTIFY_HISTORY_COUNTER } = await apiRoutes();
-        const response = await api.get(API_NOTIFY_HISTORY_COUNTER);
-        setCounterNotification(response.data);
-        // eslint-disable-next-line no-empty
-      } catch (e) {}
-    }
-    numberNotification();
-  }, [counterNotification]);
-
   return (
     <Container
       style={{
