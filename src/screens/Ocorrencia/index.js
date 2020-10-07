@@ -17,8 +17,9 @@ TextWrapper,
 NotificationWrapper,
 } from './styles';
 import { View } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 
-function Main({ navigation, isFocused }) {
+function Ocorrencia({ navigation, isFocused }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -45,18 +46,18 @@ function Main({ navigation, isFocused }) {
     <Layout navigation={navigation}>
       <View>
 
-      <Header >Botão do Pânico</Header>
+      <Header>Botão do Pânico</Header>
       <TitleWrapper>
         <Tittle>Botão do pânico</Tittle>
       </TitleWrapper>
         <TextWrapper> Se precisar de ajuda é só apertar o botão abaixo</TextWrapper>
       <TitleWrapper></TitleWrapper>
       <SosButton
-      onPress={() => {navigation.navigate('Cadastro');}}
+       onPress={() => {
+        navigation.navigate('ConfiguracaoBotaoPanico');
+      }}
       > 
-        <Sos  size={150} onPress={() => {
-        navigation.navigate('Main');
-      }}></Sos>
+        <Sos size={150}/>
       </SosButton>
       <TitleWrapper></TitleWrapper>
       <TitleWrapper></TitleWrapper>
@@ -71,11 +72,11 @@ function Main({ navigation, isFocused }) {
   );
 }
 
-Main.propTypes = {
+Ocorrencia.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }).isRequired,
   isFocused: PropTypes.bool.isRequired,
 };
 
-export default withNavigationFocus(Main);
+export default withNavigationFocus(Ocorrencia);

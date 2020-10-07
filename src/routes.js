@@ -13,6 +13,8 @@ import SignIn from '~/screens/Auth/SignIn';
  */
 import Main from '~/screens/Main';
 import Cadastro from '~/screens/Cadastro';
+import SucessoCadastro from '~/screens/SucessoCadastro'
+import Ocorrencia from '~/screens/Ocorrencia'
 
 /**
  * Page Remove Drawer Menu
@@ -53,6 +55,26 @@ export const AppDrawer = drawerPosition =>
         screen: Cadastro,
         navigationOptions: {
           title: 'Cadastro',
+          // eslint-disable-next-line react/prop-types
+          drawerIcon: ({ tintColor }) => (
+            <DrawerIcon name="bell" size={16} color={tintColor} />
+          ),
+        },
+      },
+      Ocorrencia: {
+        screen: Ocorrencia,
+        navigationOptions: {
+          title: 'Ocorrencia',
+          // eslint-disable-next-line react/prop-types
+          drawerIcon: ({ tintColor }) => (
+            <DrawerIcon name="bell" size={16} color={tintColor} />
+          ),
+        },
+      },
+      SucessoCadastro: {
+        screen: SucessoCadastro,
+        navigationOptions: {
+          title: 'SucessoCadastro',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
             <DrawerIcon name="bell" size={16} color={tintColor} />

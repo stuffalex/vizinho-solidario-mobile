@@ -165,7 +165,6 @@ export default function SignIn({ navigation, children }) {
   // Ref
   const loginRef = useRef();
   const passwordRef = useRef();
-  const [ufs] = useState(estados());
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
   const [uf, setUF] = useState('');
@@ -189,9 +188,7 @@ export default function SignIn({ navigation, children }) {
       StatusBar.setBackgroundColor('#FFFF');
     };
   }, [dispatch]);
-  const handleOpenLinkPresidente = () => {
-    Linking.openURL('https://www.facom.ufms.br');
-  };
+
   const handleSubmit = async () => {
     // try {
     //   setErrorMessage(null);
@@ -298,7 +295,7 @@ export default function SignIn({ navigation, children }) {
               <View style={{ flexDirection: 'row' }}>
               </View>
               <View style={{ marginTop: hp('2%'), marginBottom: hp('4%') }}>
-                <RectButton onPress={handleOpenLinkPresidente}>
+                <RectButton onPress={() => {navigation.navigate('Cadastro');}}>
                 <Text style={styles.infoPresidenteText}>
                   Você é um presidente? Clique aqui!
                 </Text>

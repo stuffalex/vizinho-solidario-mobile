@@ -9,53 +9,31 @@ export const Container = styled.View`
 
 export const ListWrapper = styled.SafeAreaView`
   flex: 1;
-  padding: 10px;
+  padding: -10px;
   background-color: ${colors.bgPrimary};
 `;
 
-export const ContainerButtons = styled.View`
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const ContainerText = styled.View`
-  width: 100%;
-  height: 80%;
-  justify-content: center;
-  align-items: center;
-  background-color: ${colors.bgPrimary};
-`;
-
-export const ButtonNotificationSelected = styled.TouchableOpacity`
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  margin-top: 10px;
-  width: 31%;
-  height: 40;
-  align-items: center;
-  justify-content: center;
-  background-color: #d9d9d9;
-`;
-
-export const TextButtonNotificationSelected = styled.Text`
-  color: #665d6a;
-  font-style: normal;
-  font-weight: 600;
-  font-size: ${font(12)};
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+export const HeaderText = styled.Text`
+  color: ${colors.black};
+  font-family: 'montserrat-regular';
+  font-size: ${Platform.OS === 'ios' ? '13px' : '15px'};
+  font-weight: 500;
   text-transform: uppercase;
 `;
-
-export const TextNotificationError = styled.Text`
-  color: ${colors.greyText};
-  font-family: 'montserrat-bold';
-  font-size: ${font(15)};
-  font-weight: 600;
-  line-height: 18px;
-  padding: 15px;
+export const HeaderTextWrapper = styled.View`
+  width: 100%;
+  height: -20px;
+  padding: 16px;
 `;
+export const ButtonCadastrar = styled.View`
+  marginTop: 10%;
+  height: 11.5%;
+  zIndex: 1;
+`;
+
+export const StringInput = styled.TextInput`
+background-color: #E9ECEB;
+height: 40;
+`;
+
+
