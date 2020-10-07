@@ -4,11 +4,15 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 import { useSelector } from 'react-redux';
+import { Feather as DrawerIcon } from '@expo/vector-icons';
 import colors from './styles/colors';
 import SideBar from './components/SideBar';
-import SignIn from '~/screens/SignIn/';
-
-
+import SignIn from '~/screens/Auth/SignIn';
+/**
+ * Drawer Routes Components
+ */
+import Main from '~/screens/Main';
+import Cadastro from '~/screens/Cadastro';
 
 /**
  * Page Remove Drawer Menu
@@ -21,6 +25,7 @@ const hiddenDrawerItems = ['Stack'];
  */
 const AppStack = createStackNavigator(
   {
+    Main,
   },
   {
     headerMode: 'none',
@@ -29,17 +34,31 @@ const AppStack = createStackNavigator(
 
 /**
  * Drawer
+ * Registre aqui as screens
  * @param {state} drawerPosition left | right
  */
 export const AppDrawer = drawerPosition =>
   createDrawerNavigator(
     {
-    //   Main: {
-    //     screen: Main,
-    //     navigationOptions: {
-    //       title: 'Home',
-    //     },
-    //   },
+      Main: {
+        screen: Main,
+        navigationOptions: {
+          title: 'Home',
+          drawerIcon: ({ tintColor }) => (
+            <DrawerIcon name="home" size={16} color={tintColor} />
+          ),
+        },
+      },
+      Cadastro: {
+        screen: Cadastro,
+        navigationOptions: {
+          title: 'Cadastro',
+          // eslint-disable-next-line react/prop-types
+          drawerIcon: ({ tintColor }) => (
+            <DrawerIcon name="bell" size={16} color={tintColor} />
+          ),
+        },
+      },
       Stack: AppStack,
     },
     {

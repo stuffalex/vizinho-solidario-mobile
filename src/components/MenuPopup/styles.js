@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import colors from '~/styles/colors';
+import { Menu } from 'react-native-popup-menu';
 
 export const Container = styled.View`
   padding: 0 15px;
@@ -11,14 +11,13 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
 `;
-export const TextInput = styled.TextInput.attrs(props => ({
-  placeholderTextColor: 'rgba(255,255,255, 0.6)',
-  secureTextEntry: props.password,
-}))`
-  flex: 1;
-  font-size: 15px;
-  font-family: 'montserrat-regular';
-  font-weight: bold;
+
+export const Select = styled(Menu)`
+  width: 100%;
+  padding: 10px 0;
   margin-left: 10px;
-  color: ${colors.white};
+`;
+
+export const Text = styled.Text`
+  padding: 5px 10px;
 `;

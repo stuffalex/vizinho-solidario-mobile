@@ -28,14 +28,14 @@ const Input = forwardRef(({ style, icon, password, ...rest }, ref) => {
 
   return (
     <Container style={style}>
-      {icon && <Icon name={icon} size={20} color="rgba(255,255,255,0.6)" />}
+      {icon && <Icon name={icon} size={20} color="#2CC28C" />}
       <TextInput {...rest} ref={ref} password={hidePassword} />
       {password && (
         <TouchableWithoutFeedback
           onPress={handlePassword}
           hitSlop={{ left: 40, right: 40, top: 40, bottom: 40 }}
         >
-          <Icon name={iconPassword} size={20} color="rgba(255,255,255,0.6)" />
+          <Icon name={iconPassword} size={20} color="#2CC28C" />
         </TouchableWithoutFeedback>
       )}
     </Container>
