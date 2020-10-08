@@ -4,15 +4,12 @@
     "slug": "VizinhoSolidario",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "version": "1.0.17",
     "orientation": "portrait",
-    "icon": "./assets/splash.png",
+    // "icon": "./assets/splash.png",
     "splash": {
-      "image": "./assets/splash.png",
+      // "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#01A0A0"
     },
@@ -29,7 +26,7 @@
       "buildNumber": "1"
     },
     "android": {
-      "package": "com.fabruca.vizinhosolidario",
+      "package": "com.fabrica.vizinhosolidario",
       // "googleServicesFile": "./google-services.json",
       "splash": {
         "image": "./assets/splash.png",
@@ -41,13 +38,11 @@
       }
     },
     "notification": {
-      "icon": "./assets/splash.png",
+      // "icon": "./assets/splash.png",
       "color": "#000000",
       "iosDisplayInForeground": true
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "androidShowExponentNotificationInShellApp": true,
     "androidStatusBar": {
       "backgroundColor": "#01A0A0"
@@ -55,7 +50,6 @@
     "androidNavigationBar": {
       "barStyle": "dark-content",
       "backgroundColor": "#f8f6f9"
-    },
-
+    }
   }
 }

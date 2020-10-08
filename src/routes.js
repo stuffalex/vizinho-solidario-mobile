@@ -6,15 +6,18 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { useSelector } from 'react-redux';
 import { Feather as DrawerIcon } from '@expo/vector-icons';
 import colors from './styles/colors';
-import SideBar from './components/SideBar';
+//import SideBar from './components/SideBar';
 import SignIn from '~/screens/Auth/SignIn';
 /**
  * Drawer Routes Components
  */
 import Main from '~/screens/Main';
 import Cadastro from '~/screens/Cadastro';
-import SucessoCadastro from '~/screens/SucessoCadastro'
-import Ocorrencia from '~/screens/Ocorrencia'
+import SucessoCadastro from '~/screens/SucessoCadastro';
+import SucessoOcorrenciaEnviada from '~/screens/SucessoOcorrenciaEnviada';
+import CriarOcorrencia from '~/screens/CriarOcorrencia';
+import Ocorrencia from '~/screens/Ocorrencia';
+import NovaOcorrencia from '~/screens/NovaOcorrencia';
 
 /**
  * Page Remove Drawer Menu
@@ -39,7 +42,7 @@ const AppStack = createStackNavigator(
  * Registre aqui as screens
  * @param {state} drawerPosition left | right
  */
-export const AppDrawer = drawerPosition =>
+export const AppDrawer = (drawerPosition) =>
   createDrawerNavigator(
     {
       Main: {
@@ -47,7 +50,7 @@ export const AppDrawer = drawerPosition =>
         navigationOptions: {
           title: 'Home',
           drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name="home" size={16} color={tintColor} />
+            <DrawerIcon name='home' size={16} color={tintColor} />
           ),
         },
       },
@@ -57,7 +60,7 @@ export const AppDrawer = drawerPosition =>
           title: 'Cadastro',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name="bell" size={16} color={tintColor} />
+            <DrawerIcon name='bell' size={16} color={tintColor} />
           ),
         },
       },
@@ -67,7 +70,37 @@ export const AppDrawer = drawerPosition =>
           title: 'Ocorrencia',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name="bell" size={16} color={tintColor} />
+            <DrawerIcon name='bell' size={16} color={tintColor} />
+          ),
+        },
+      },
+      CriarOcorrencia: {
+        screen: CriarOcorrencia,
+        navigationOptions: {
+          title: 'CriarOcorrencia',
+          // eslint-disable-next-line react/prop-types
+          drawerIcon: ({ tintColor }) => (
+            <DrawerIcon name='bell' size={16} color={tintColor} />
+          ),
+        },
+      },
+      NovaOcorrencia: {
+        screen: NovaOcorrencia,
+        navigationOptions: {
+          title: 'NovaOcorrencia',
+          // eslint-disable-next-line react/prop-types
+          drawerIcon: ({ tintColor }) => (
+            <DrawerIcon name='bell' size={16} color={tintColor} />
+          ),
+        },
+      },
+      SucessoOcorrenciaEnviada: {
+        screen: SucessoOcorrenciaEnviada,
+        navigationOptions: {
+          title: 'SucessoOcorrenciaEnviada',
+          // eslint-disable-next-line react/prop-types
+          drawerIcon: ({ tintColor }) => (
+            <DrawerIcon name='bell' size={16} color={tintColor} />
           ),
         },
       },
@@ -77,21 +110,21 @@ export const AppDrawer = drawerPosition =>
           title: 'SucessoCadastro',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name="bell" size={16} color={tintColor} />
+            <DrawerIcon name='bell' size={16} color={tintColor} />
           ),
         },
       },
       Stack: AppStack,
     },
     {
-      contentComponent: props => {
+      contentComponent: (props) => {
         const updateProps = {
           ...props,
           items: props.items.filter(
-            item => !hiddenDrawerItems.includes(item.key)
+            (item) => !hiddenDrawerItems.includes(item.key)
           ),
         };
-        return <SideBar {...updateProps} />;
+        //return <SideBar {...updateProps} />;
       },
       drawerPosition,
       contentOptions: {
@@ -103,7 +136,7 @@ export const AppDrawer = drawerPosition =>
   );
 
 export default (signedIn = false) => {
-  const { drawer } = useSelector(state => state.settings.screen);
+  const { drawer } = useSelector((state) => state.settings.screen);
   return createAppContainer(
     createSwitchNavigator(
       {
