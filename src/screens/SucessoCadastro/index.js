@@ -5,19 +5,16 @@ import { withNavigationFocus } from 'react-navigation';
 import { ScreenOrientation } from 'expo';
 import Layout from '~/components/_layouts/Portrait';
 import Header from '~/components/Header';
-import Sos from '~/components/Svg/Sos'
+import Sos from '~/components/Svg/Sos';
 import ButtonGradient from '~/components/Buttons/ButtonGradient';
 
-
-
-
 import {
-SosButton,
-Tittle,
-TitleWrapper,
-TextWrapper,
-NotificationWrapper,
-ButtonCadastrar,
+  SosButton,
+  Tittle,
+  TitleWrapper,
+  TextWrapper,
+  NotificationWrapper,
+  ButtonCadastrar,
 } from './styles';
 import { View } from 'react-native';
 
@@ -47,26 +44,28 @@ function SucessoCadastro({ navigation, isFocused }) {
   return (
     <Layout navigation={navigation}>
       <View>
+        <Header>Cadastro</Header>
+        <TitleWrapper>
+          <Tittle>Seu cadastro foi enviado com sucesso!</Tittle>
+        </TitleWrapper>
+        <TitleWrapper></TitleWrapper>
+        <TitleWrapper></TitleWrapper>
+        <TitleWrapper></TitleWrapper>
 
-      <Header >Cadastro</Header>
-      <TitleWrapper>
-        <Tittle>Seu cadastro foi enviado com sucesso!</Tittle>
-      </TitleWrapper>
-      <TitleWrapper></TitleWrapper>
-      <TitleWrapper></TitleWrapper>
-      <TitleWrapper></TitleWrapper>
-
-        <TextWrapper> Aguarde sua aprovação no bairro para que possa acessar ao sistema</TextWrapper>
-      <TitleWrapper></TitleWrapper>
-      <ButtonCadastrar>
-            <ButtonGradient
-              onPress={() => {
-                navigation.navigate('SignIn');
-              }}
-                name="Ok"
-                upper
-              />
-          </ButtonCadastrar>
+        <TextWrapper>
+          {' '}
+          Aguarde sua aprovação no bairro para que possa acessar ao sistema
+        </TextWrapper>
+        <TitleWrapper></TitleWrapper>
+        <ButtonCadastrar>
+          <ButtonGradient
+            onPress={() => {
+              navigation.navigate('SignIn');
+            }}
+            name='Ok'
+            upper
+          />
+        </ButtonCadastrar>
       </View>
     </Layout>
   );

@@ -94,6 +94,16 @@ export const AppDrawer = (drawerPosition) =>
           ),
         },
       },
+      MensagemDireta: {
+        screen: MensagemDireta,
+        navigationOptions: {
+          title: 'MensagemDireta',
+          // eslint-disable-next-line react/prop-types
+          drawerIcon: ({ tintColor }) => (
+            <DrawerIcon name='bell' size={16} color={tintColor} />
+          ),
+        },
+      },
       SucessoOcorrenciaEnviada: {
         screen: SucessoOcorrenciaEnviada,
         navigationOptions: {

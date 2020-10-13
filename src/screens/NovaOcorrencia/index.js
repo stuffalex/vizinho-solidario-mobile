@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, RefreshControl, Alert, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withNavigationFocus } from 'react-navigation';
+import { Dropdown } from 'react-native-material-dropdown';
 import { ScreenOrientation } from 'expo';
 import Layout from '~/components/_layouts/Portrait';
 import Header from '~/components/Header';
-import DropDownPicker from 'react-native-dropdown-picker';
 
 import {
   SosButton,
@@ -39,20 +39,21 @@ function NovaOcorrencia({ navigation, isFocused }) {
 
     cleanup();
   }, [isFocused]);
+  let data = [
+    {
+      value: 'Ocorrência',
+    },
+    {
+      value: 'Mensagem Direta',
+    },
+  ];
 
   return (
     <Layout navigation={navigation}>
       <Container>
         <ScrollView>
-          <label>
-            Escolha o que deseja enviar:
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value='ocorrencia'>Ocorrência</option>
-              <option value='mensagemDireta'>Mensagem Direta</option>
-            </select>
-          </label>
-          //nao sei se ta certo aqui
-          <input type='submit' value='Enviar' />
+          <Dropdown label=' Escolha o que deseja enviar:' data={data} />
+
           <ButtonCadastrar>
             <ButtonGradient
               onPress={() => {

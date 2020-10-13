@@ -3,10 +3,9 @@ import { FlatList, RefreshControl, Alert, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withNavigationFocus } from 'react-navigation';
 import { ScreenOrientation } from 'expo';
+import { Dropdown } from 'react-native-material-dropdown';
 import Layout from '~/components/_layouts/Portrait';
 import Header from '~/components/Header';
-import DropDownPicker from 'react-native-dropdown-picker';
-import { Dropdown } from 'react-native-material-dropdown';
 
 import {
   SosButton,
@@ -43,16 +42,24 @@ function CriarOcorrencia({ navigation, isFocused }) {
 
   let data = [
     {
-      value: 'Assalto/Violência',
+      value: 'Viagem',
     },
     {
-      value: 'Pessoa/Veiculo Estranho',
-    },
-    {
-      value: 'Problema de infraestutura',
+      value: 'Cuidar da casa',
     },
     {
       value: 'Outros',
+    },
+  ];
+  let pessoas = [
+    {
+      value: 'Ana',
+    },
+    {
+      value: 'Maria',
+    },
+    {
+      value: 'João',
     },
   ];
 
@@ -60,10 +67,12 @@ function CriarOcorrencia({ navigation, isFocused }) {
     <Layout navigation={navigation}>
       <Container>
         <ScrollView>
-          <Dropdown label='Escolha o tipo de ocorrência:' data={data} />
+          <Dropdown label='Escolha o assunto da mensagem direta:' data={data} />
 
-          <HeaderText>Descrição da ocorrência</HeaderText>
+          <HeaderText>Descrição da mensagem direta</HeaderText>
           <StringInput></StringInput>
+          <Dropdown label='Escolha para quem mandar:' data={pessoas} />
+
           <HeaderTextWrapper>
             <ButtonEnviar>
               <ButtonGradient
