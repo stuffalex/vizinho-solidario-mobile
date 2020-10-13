@@ -16,7 +16,7 @@ export const WrapperSafe = styled.SafeAreaView`
 
 export const WrapperHeaderHorizontal = styled.View`
   flex-direction: row;
-  background-color: #137F88;
+  background-color: #0D7F7F;
   width: 100%;
   height: auto;
   padding: ${props => (props.spacing ? '20px 0px' : '20px')};

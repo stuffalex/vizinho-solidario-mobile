@@ -17,7 +17,7 @@ export const ListWrapper = styled.SafeAreaView`
   background-color: ${colors.bgPrimary};
 `;
 export const SosButton = styled.View`
-  height: 20;
+  height: 10;
   margin-left: 120; 
 `;
 
@@ -32,8 +32,8 @@ export const Tittle = styled.Text`
 export const TitleWrapper = styled.View`
   width: 100%;
   height: -10px;
-  padding: 30px;
-  margin-left: 50;
+  padding: 10px;
+  margin-left: 30;
 `;
 
 export const NotificationWrapper = styled.View`
@@ -49,6 +49,11 @@ export const TextWrapper = styled.Text`
   font-weight: 200;
   text-transform: uppercase;
   margin-left: 100;
-  margin-right:30;
+  margin-right:60;
+`;
+export const ButtonCadastrar = styled.View`
+  marginTop: 20%;
+  height: 11.5%;
+  zIndex: 1;
 `;
 

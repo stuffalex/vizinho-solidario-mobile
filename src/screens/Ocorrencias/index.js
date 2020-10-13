@@ -6,6 +6,8 @@ import { ScreenOrientation } from 'expo';
 import Layout from '~/components/_layouts/Portrait';
 import Header from '~/components/Header';
 import Sos from '~/components/Svg/Sos'
+import ButtonSave from '~/components/ButtonSave/ButtonSave';
+
 
 
 
@@ -15,11 +17,11 @@ Tittle,
 TitleWrapper,
 TextWrapper,
 NotificationWrapper,
+ButtonCadastrar,
 } from './styles';
 import { View } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
 
-function Ocorrencia({ navigation, isFocused }) {
+function Ocorrencias({ navigation, isFocused }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -46,37 +48,26 @@ function Ocorrencia({ navigation, isFocused }) {
     <Layout navigation={navigation}>
       <View>
 
-      <Header>Botão do Pânico</Header>
-      <TitleWrapper>
-        <Tittle>Botão do pânico</Tittle>
-      </TitleWrapper>
-        <TextWrapper> Se precisar de ajuda é só apertar o botão abaixo</TextWrapper>
-      <TitleWrapper></TitleWrapper>
-      <SosButton
-       onPress={() => {
-        navigation.navigate('ConfiguracaoBotaoPanico');
-      }}
-      > 
-        <Sos size={150}/>
-      </SosButton>
-      <TitleWrapper></TitleWrapper>
-      <TitleWrapper></TitleWrapper>
-      <TitleWrapper></TitleWrapper>
-
-      <NotificationWrapper>
-        <Tittle>Últimas notificações da sua região</Tittle>
-      </NotificationWrapper>
-      <TextWrapper> Tudo Tranquilo por aqui</TextWrapper>
+      <Header >Ocorrências</Header>
+      <ButtonCadastrar>
+            <ButtonSave
+              onPress={() => {
+                navigation.navigate('SignIn');
+              }}
+                name="Ok"
+                upper
+              />
+          </ButtonCadastrar>
       </View>
     </Layout>
   );
 }
 
-Ocorrencia.propTypes = {
+Ocorrencias.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }).isRequired,
   isFocused: PropTypes.bool.isRequired,
 };
 
-export default withNavigationFocus(Ocorrencia);
+export default withNavigationFocus(Ocorrencias);

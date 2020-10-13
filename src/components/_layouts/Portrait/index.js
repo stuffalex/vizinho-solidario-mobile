@@ -5,8 +5,8 @@ import { ScreenOrientation } from 'expo';
 import PropTypes from 'prop-types';
 
 import HeaderLogo from '~/components/Svg/HeaderLogo';
-import api from '~/services/api';
-import apiRoutes from '~/services/apiRoutes';
+
+
 
 import {
   Container,
@@ -14,6 +14,9 @@ import {
   WrapperHeaderHorizontal,
   ButtonDrawer,
   Wrapper,
+  ButtonNotify,
+  ButtonLogoDrawer,
+  NotificationCounter,
 } from './styles';
 
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 0 : StatusBar.currentHeight;
@@ -37,10 +40,12 @@ export default function Layout({ navigation, children }) {
     >
       <WrapperSafe>
         <WrapperHeaderHorizontal style={{ paddingTop: 10 }}>
-          <ButtonDrawer onPress={() => navigation.navigate('SignIn')}>
-            <Icon size={32} color="#fff" name="arrow-left" />
+          <ButtonDrawer onPress={() => navigation.openDrawer()}>
+            <Icon size={32} color="#fff" name="menu" />
           </ButtonDrawer>
-
+          <ButtonLogoDrawer onPress={() => navigation.openDrawer()}>
+            <HeaderLogo width="102px" height="100%" />
+          </ButtonLogoDrawer>
         </WrapperHeaderHorizontal>
         <Wrapper>{children}</Wrapper>
       </WrapperSafe>

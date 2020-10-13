@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withNavigationFocus } from 'react-navigation';
 import { ScreenOrientation } from 'expo';
 
-import Layout from '~/components/_layouts/Portrait';
+import LayoutBack from '~/components/_layouts/PortraitBack'
 import Header from '~/components/Header';
 import ButtonGradient from '~/components/Buttons/ButtonGradient';
 
@@ -44,7 +44,7 @@ export function Cadastro({ navigation, isFocused }) {
   }, [isFocused]);
 
   return (
-    <Layout navigation={navigation}>
+    <LayoutBack navigation={navigation}>
       <Container>
         <ScrollView>
           
@@ -110,7 +110,7 @@ export function Cadastro({ navigation, isFocused }) {
         </ListWrapper>
         </ScrollView>
       </Container>
-    </Layout>
+    </LayoutBack>
   );
 }
 

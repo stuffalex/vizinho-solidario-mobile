@@ -100,7 +100,7 @@ export default function OptionSidebar({ onCloseBar, toogle, children }) {
             hitSlop={{ left: 40, right: 40, top: 40, bottom: 40 }}
             onPress={onCloseBar}
           >
-            <IconOption iconColor="#660099" />
+            <IconOption iconColor="#137F88" />
           </ButtonToogle>
         </ButtonWrapper>
         <ContentScrollView>

@@ -25,6 +25,7 @@ export const MenuContainer = styled.View`
 export const IconLogo = styled.View`
   width: 100%;
   height: auto;
+  margin-left: ${hp('5%')};
   margin-top: ${hp('2%')};
   margin-bottom: ${hp('2%')};
 `;

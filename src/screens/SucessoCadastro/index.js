@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { withNavigationFocus } from 'react-navigation';
 import { ScreenOrientation } from 'expo';
 import Layout from '~/components/_layouts/Portrait';
+import LayoutBack from '~/components/_layouts/PortraitBack'
 import Header from '~/components/Header';
 import Sos from '~/components/Svg/Sos'
 import ButtonGradient from '~/components/Buttons/ButtonGradient';
@@ -45,7 +46,7 @@ function SucessoCadastro({ navigation, isFocused }) {
   }, [isFocused]);
 
   return (
-    <Layout navigation={navigation}>
+    <LayoutBack navigation={navigation}>
       <View>
 
       <Header >Cadastro</Header>
@@ -68,7 +69,7 @@ function SucessoCadastro({ navigation, isFocused }) {
               />
           </ButtonCadastrar>
       </View>
-    </Layout>
+    </LayoutBack>
   );
 }
 

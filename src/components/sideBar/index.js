@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Alert } from 'react-native';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
+import { AntDesign  as PersonIcon} from '@expo/vector-icons'; 
 import { DrawerNavigatorItems } from 'react-navigation-drawer';
 import pkg from '~/../package.json';
 
@@ -28,7 +29,7 @@ export default function SideBar(props) {
       <WrapperMenu>
         <MenuContainer>
           <IconLogo>
-            <Logo width="80%" height="40px" />
+          <PersonIcon size={100} color="#137F88" name="smileo" />
           </IconLogo>
           <DrawerNavigatorItems {...props} />
           <LogoutContainer>
@@ -55,7 +56,7 @@ export default function SideBar(props) {
                 );
               }}
             >
-              <Icon size={16} color="#6B5974" name="exit-to-app" />
+              <Icon size={16} color="#777484" name="exit-to-app" />
               <LogoutText>Sair</LogoutText>
             </LogoutButton>
           </LogoutContainer>

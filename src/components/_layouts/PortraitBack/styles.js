@@ -16,7 +16,7 @@ export const WrapperSafe = styled.SafeAreaView`
 
 export const WrapperHeaderHorizontal = styled.View`
   flex-direction: row;
-  background-color: #609;
+  background-color: #0D7F7F;
   width: 100%;
   height: auto;
   padding: ${props => (props.spacing ? '20px 0px' : '20px')};
@@ -78,22 +78,4 @@ export const ButtonLogoDrawer = styled.TouchableOpacity`
   top: 5%;
   bottom: 40.45%;
 `;
-export const CircleNotificationCounter = styled.View`
-  background-color: red;
-  position: absolute;
-  height: 14px;
-  width: 14px;
-  border-radius: 50px;
-  align-items: center;
-  justify-content: center;
-`;
-export const NotificationCounter = styled.Text`
-  font-style: normal;
-  top: ${Platform.OS === 'ios' ? '15px' : '14px'};
-  align-items: center;
-  justify-content: center;
-  font-weight: 500;
-  font-size: 8px;
-  line-height: 11px;
-  color: #ffffff;
-`;
+

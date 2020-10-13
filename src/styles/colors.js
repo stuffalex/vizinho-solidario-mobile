@@ -1,8 +1,8 @@
 import { rgba } from 'polished';
 
 export default {
-  primary: '#660099',
-  secundary: '#CD0C8B',
+  primary: '#01A0A0',
+  secundary: '#7DD8D2',
   info: '#3682F4',
   info2: '#36D2F4',
   danger: '#F44336',
@@ -15,10 +15,10 @@ export default {
   primary50: '#9C90A2',
   primary25: '#CEC8D1',
   grey: '#E3DCE7',
-  greyText: '#A9A9A9',
+  greyText: '#777484',
   grey75: '#EAE5ED',
   grey60: '#EEEEEE',
-  grey50: '#F1EDF3',
+  grey50: '#01A0A0',
   grey25: '#F8F6F9',
   white: '#FFFFFF',
   bgPrimary: '#f8f6f9',

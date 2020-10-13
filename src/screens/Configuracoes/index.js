@@ -3,9 +3,11 @@ import { FlatList, RefreshControl, Alert, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withNavigationFocus } from 'react-navigation';
 import { ScreenOrientation } from 'expo';
-import LayoutBack from '~/components/_layouts/Portrait';
+import Layout from '~/components/_layouts/Portrait';
 import Header from '~/components/Header';
 import Sos from '~/components/Svg/Sos'
+import ButtonSave from '~/components/ButtonSave/ButtonSave';
+
 
 
 
@@ -15,10 +17,11 @@ Tittle,
 TitleWrapper,
 TextWrapper,
 NotificationWrapper,
+ButtonCadastrar,
 } from './styles';
 import { View } from 'react-native';
 
-function Main({ navigation, isFocused }) {
+function Configuracoes({ navigation, isFocused }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,40 +45,38 @@ function Main({ navigation, isFocused }) {
   }, [isFocused]);
 
   return (
-    <LayoutBack navigation={navigation}>
+    <Layout navigation={navigation}>
       <View>
 
-      <Header >Botão do Pânico</Header>
+      <Header >Configurações</Header>
       <TitleWrapper>
-        <Tittle>Você está em uma emergência?</Tittle>
+        <Tittle>teste</Tittle>
       </TitleWrapper>
-        <TextWrapper> Se precisar de ajuda é só apertar o botão abaixo</TextWrapper>
-      <TitleWrapper></TitleWrapper>
-      <SosButton
-      onPress={() => {navigation.navigate('Cadastro');}}
-      > 
-        <Sos  size={100} onPress={() => {
-        navigation.navigate('Main');
-      }}></Sos>
-      </SosButton>
       <TitleWrapper></TitleWrapper>
       <TitleWrapper></TitleWrapper>
       <TitleWrapper></TitleWrapper>
 
-      <NotificationWrapper>
-        <Tittle>Últimas notificações da sua região</Tittle>
-      </NotificationWrapper>
-      <TextWrapper> Tudo Tranquilo por aqui</TextWrapper>
+        <TextWrapper> Aguarde sua aprovação no bairro para que possa acessar ao sistema</TextWrapper>
+      <TitleWrapper></TitleWrapper>
+      <ButtonCadastrar>
+            <ButtonSave
+              onPress={() => {
+                navigation.navigate('SignIn');
+              }}
+                name="Ok"
+                upper
+              />
+          </ButtonCadastrar>
       </View>
-    </LayoutBack>
+    </Layout>
   );
 }
 
-Main.propTypes = {
+Configuracoes.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }).isRequired,
   isFocused: PropTypes.bool.isRequired,
 };
 
-export default withNavigationFocus(Main);
+export default withNavigationFocus(Configuracoes);
