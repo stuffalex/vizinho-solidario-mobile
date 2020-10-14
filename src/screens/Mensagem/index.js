@@ -21,7 +21,7 @@ ContatWrapper,
 ContatoDropDown
 } from './styles';
 
-function Ocorrencias({ navigation, isFocused }) {
+function Mensagem({ navigation, isFocused }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -43,27 +43,33 @@ function Ocorrencias({ navigation, isFocused }) {
 
     cleanup();
   }, [isFocused]);
+  
   const tipoMensagem = [
-    {value: 'Assalto/Violência'},
-    {value: 'Pessoa/veículo estranho'},
-    {value: 'Problemas de infraestrutura'},
-    {value: 'Outros'},
+    {value: 'Viagem'},
+    {value: 'Outros'}
+  ];
 
-
+  const Vizinho = [
+    {value: 'Todos'},
+    {value: 'Fernando'},
+    {value: 'Hanna'},
+    {value: 'Edini'},
+    {value: 'Alexya'},
+    {value: 'Mimura'}
   ];
 
   return (
     <LayoutBack navigation={navigation}>
-      <Header >Criar ocorrência</Header>
+      <Header >Enviar Mensagem</Header>
       <Container>
         <TitleWrapper>
           <Tittle>
-            Selecione o tipo de ocorrência
+            Selecione o tipo de mensagem
           </Tittle>
         </TitleWrapper>
         <HeaderDropDown>
           <Dropdown
-                placeholder={"Escolha o tipo de ocorrência"}
+                placeholder={"Escolha o tipo de mensagem"}
                 containerStyle={{ justifyContent: 'center', marginBottom: 15 }}
                 data={tipoMensagem}
                 dropdownPosition={-2.6}
@@ -80,7 +86,7 @@ function Ocorrencias({ navigation, isFocused }) {
                 baseColor="#fff"
                 textColor="#fff"
                 pickerStyle={{
-                  marginTop: Platform.OS === 'ios' ? 80: 60,
+                  marginBottom: Platform.OS === 'ios' ? 10: 20,
                   backgroundColor: '#01A0A0',
                   opacity: 0.85,
                   borderRadius: 5,
@@ -100,6 +106,43 @@ function Ocorrencias({ navigation, isFocused }) {
                 placeholder="Descrição"
                 returnKeyType="next"
         ></InputDescricao>
+         <ContatWrapper>
+          <Tittle>
+            Selecione para quem irá enviar a mensagem
+          </Tittle>
+          <ContatoDropDown>
+          <Dropdown
+                placeholder={"Escolha o vizinho"}
+                containerStyle={{ justifyContent: 'center', marginBottom: 10 }}
+                data={Vizinho}
+                dropdownPosition={-2.6}
+                placeholderTextColor="#fff"
+                inputContainerStyle={{
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: 5,
+                  backgroundColor: '#01A0A0',
+                  height: 40,
+                  paddingTop: 0,
+                  paddingLeft: 10,
+                }}
+                baseColor="#fff"
+                textColor="#fff"
+                pickerStyle={{
+                  marginTop: Platform.OS === 'ios' ? 75: 40,
+                  backgroundColor: '#01A0A0',
+                  opacity: 0.85,
+                  borderRadius: 5,
+                  bottom: '30%',
+                  marginLeft: '4.5%',
+                  width: '72%',
+                }}
+                rippleInsets={{
+                  top: 0,
+                }}
+              />
+          </ContatoDropDown>
+        </ContatWrapper>
           <ButtonSend
             onPress={() => {
               Alert.alert('Enviado com sucesso');
@@ -107,17 +150,16 @@ function Ocorrencias({ navigation, isFocused }) {
             name="Enviar"
             upper
           />        
-
       </Container> 
     </LayoutBack>
   );
 }
 
-Ocorrencias.propTypes = {
+Mensagem.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }).isRequired,
   isFocused: PropTypes.bool.isRequired,
 };
 
-export default withNavigationFocus(Ocorrencias);
+export default withNavigationFocus(Mensagem);

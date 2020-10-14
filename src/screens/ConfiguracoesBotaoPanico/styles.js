@@ -20,7 +20,7 @@ export const Tittle = styled.Text`
 export const TitleWrapper = styled.View`
   margin-left: -50;
   height: 100;
-  bottom: 110;
+  bottom: 80;
   width: 100%;
   align-items: center;
 `;
@@ -59,4 +59,25 @@ height: 130;
 width: 100%;
 bottom: 90;
 margin-left: -55px;
+`;
+export const ItemSwitchContainer = styled.View`
+  padding: 10px 0;
+`;
+export const ItemText = styled.Text`
+  font-family: 'montserrat-regular';  
+  font-size: 15px;
+  flex: 0.85;
+  flex-wrap: wrap;
+`;
+
+export const ItemWrapper = styled.View`
+  margin-bottom: 20px;
+  bottom: 30%;
+  flex-direction: row;
+  margin-left:-20%;
+  margin-right:10%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0;
+
 `;

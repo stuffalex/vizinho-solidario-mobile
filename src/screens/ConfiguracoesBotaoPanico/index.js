@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, RefreshControl, Alert, Text } from 'react-native';
+import {refreshControl, Alert, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import { FlatList, Switch } from 'react-native-gesture-handler';
+
 import { withNavigationFocus } from 'react-navigation';
 import { ScreenOrientation } from 'expo';
 import LayoutBack from '~/components/_layouts/Portrait';
 import Header from '~/components/Header';
 import { Dropdown } from 'react-native-material-dropdown';
-import InputDescricao from '~/components/InputDescricao';
+import InputBotaoPanico from '~/components/InputBotaoPanico';
+import InputNumeroPanico from '~/components/InputNumeroPanico';
+
 import ButtonSend from '~/components/ButtonSend/ButtonSend';
 
 
@@ -16,12 +20,12 @@ import {
 Tittle,
 TitleWrapper,
 Container,
-HeaderDropDown,
-ContatWrapper,
-ContatoDropDown
+ItemSwitchContainer,
+ItemText,
+ItemWrapper
 } from './styles';
 
-function Ocorrencias({ navigation, isFocused }) {
+function ConfiguracoesBotaoPanico({ navigation, isFocused }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -54,70 +58,57 @@ function Ocorrencias({ navigation, isFocused }) {
 
   return (
     <LayoutBack navigation={navigation}>
-      <Header >Criar ocorrência</Header>
+      <Header >Configurações do Botão do pânico</Header>
       <Container>
         <TitleWrapper>
           <Tittle>
-            Selecione o tipo de ocorrência
+            Quando você apertar o botão do pânico, a seguinte mensagem será enviada para o número cadastrado:
           </Tittle>
         </TitleWrapper>
-        <HeaderDropDown>
-          <Dropdown
-                placeholder={"Escolha o tipo de ocorrência"}
-                containerStyle={{ justifyContent: 'center', marginBottom: 15 }}
-                data={tipoMensagem}
-                dropdownPosition={-2.6}
-                placeholderTextColor="#fff"
-                inputContainerStyle={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRadius: 5,
-                  backgroundColor: '#01A0A0',
-                  height: 40,
-                  paddingTop: 0,
-                  paddingLeft: 10,
-                }}
-                baseColor="#fff"
-                textColor="#fff"
-                pickerStyle={{
-                  marginTop: Platform.OS === 'ios' ? 80: 60,
-                  backgroundColor: '#01A0A0',
-                  opacity: 0.85,
-                  borderRadius: 5,
-                  bottom: '20%',
-                  marginLeft: '4.5%',
-                  width: '72%',
-                }}
-                rippleInsets={{
-                  top: 0,
-                }}
-              />
-        </HeaderDropDown>
-        <InputDescricao
+
+        <InputBotaoPanico
           style={{ marginTop: 2 }}
                 icon="email-outline"
                 required="true"
                 placeholder="Descrição"
                 returnKeyType="next"
-        ></InputDescricao>
+        ></InputBotaoPanico>
+        <ItemWrapper>
+                    <ItemText>Enviar localização exata </ItemText>
+                    <ItemSwitchContainer>
+                      <Switch
+                        hitSlop={{ left: 20, top: 20, bottom: 20, right: 20 }}
+                        disabled={false}
+                        value={true}
+
+                      />
+                    </ItemSwitchContainer>           
+                  </ItemWrapper>
+        <Text style={{ fontFamily: 'montserrat-regular', fontSize: 15, right: 55, bottom: 35}}> Número de emergência</Text>
+        <InputNumeroPanico
+          style={{ marginTop: 0 }}
+                icon="email-outline"
+                required="true"
+                placeholder="Descrição"
+                returnKeyType="next"
+        ></InputNumeroPanico>
           <ButtonSend
             onPress={() => {
-              Alert.alert('Enviado com sucesso');
+              Alert.alert('Salvado com sucesso');
             }}
-            name="Enviar"
+            name="Salvar"
             upper
           />        
-
       </Container> 
     </LayoutBack>
   );
 }
 
-Ocorrencias.propTypes = {
+ConfiguracoesBotaoPanico.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }).isRequired,
   isFocused: PropTypes.bool.isRequired,
 };
 
-export default withNavigationFocus(Ocorrencias);
+export default withNavigationFocus(ConfiguracoesBotaoPanico);

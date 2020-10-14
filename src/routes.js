@@ -18,6 +18,8 @@ import Cadastro from '~/screens/Cadastro';
 import SucessoCadastro from '~/screens/SucessoCadastro'
 import Configuracoes from '~/screens/Configuracoes'
 import Ocorrencias from '~/screens/Ocorrencias'
+import Mensagem from '~/screens/Mensagem'
+import ConfiguracoesBotaoPanico from '~/screens/ConfiguracoesBotaoPanico'
 
 /**
  * Page Remove Drawer Menu
@@ -32,6 +34,7 @@ const AppStack = createStackNavigator(
   {
     Cadastro,
     SucessoCadastro,
+    ConfiguracoesBotaoPanico
   },
   {
     headerMode: 'none',
@@ -62,6 +65,16 @@ export const AppDrawer = drawerPosition =>
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
             <WarningIcon name="warning" size={16} color={tintColor} />
+          ),
+        },
+      },
+      Mensagem: {
+        screen: Mensagem,
+        navigationOptions: {
+          title: 'Enviar Mensagem',
+          // eslint-disable-next-line react/prop-types
+          drawerIcon: ({ tintColor }) => (
+            <WarningIcon name="message1" size={16} color={tintColor} />
           ),
         },
       },
