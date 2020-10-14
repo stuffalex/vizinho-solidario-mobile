@@ -5,8 +5,10 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 import { useSelector } from 'react-redux';
 import { Feather as DrawerIcon } from '@expo/vector-icons';
+import { AntDesign as WarningIcon } from '@expo/vector-icons';
+
 import colors from './styles/colors';
-//import SideBar from './components/SideBar';
+import SideBar from './components/SideBar';
 import SignIn from '~/screens/Auth/SignIn';
 /**
  * Drawer Routes Components
@@ -14,6 +16,8 @@ import SignIn from '~/screens/Auth/SignIn';
 import Main from '~/screens/Main';
 import Cadastro from '~/screens/Cadastro';
 import SucessoCadastro from '~/screens/SucessoCadastro';
+import Configuracoes from '~/screens/Configuracoes';
+import Ocorrencias from '~/screens/Ocorrencias';
 import SucessoOcorrenciaEnviada from '~/screens/SucessoOcorrenciaEnviada';
 import CriarOcorrencia from '~/screens/CriarOcorrencia';
 import Ocorrencia from '~/screens/Ocorrencia';
@@ -30,7 +34,8 @@ const hiddenDrawerItems = ['Stack'];
  */
 const AppStack = createStackNavigator(
   {
-    Main,
+    Cadastro,
+    SucessoCadastro,
   },
   {
     headerMode: 'none',
@@ -54,23 +59,23 @@ export const AppDrawer = (drawerPosition) =>
           ),
         },
       },
-      Cadastro: {
-        screen: Cadastro,
+      Ocorrencias: {
+        screen: Ocorrencias,
         navigationOptions: {
-          title: 'Cadastro',
+          title: 'Criar ocorrência',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name='bell' size={16} color={tintColor} />
+            <WarningIcon name='warning' size={16} color={tintColor} />
           ),
         },
       },
-      Ocorrencia: {
-        screen: Ocorrencia,
+      Configuracoes: {
+        screen: Configuracoes,
         navigationOptions: {
-          title: 'Ocorrencia',
+          title: 'Configurações',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name='bell' size={16} color={tintColor} />
+            <DrawerIcon name='settings' size={16} color={tintColor} />
           ),
         },
       },
@@ -114,16 +119,6 @@ export const AppDrawer = (drawerPosition) =>
           ),
         },
       },
-      SucessoCadastro: {
-        screen: SucessoCadastro,
-        navigationOptions: {
-          title: 'SucessoCadastro',
-          // eslint-disable-next-line react/prop-types
-          drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name='bell' size={16} color={tintColor} />
-          ),
-        },
-      },
       Stack: AppStack,
     },
     {
@@ -134,13 +129,13 @@ export const AppDrawer = (drawerPosition) =>
             (item) => !hiddenDrawerItems.includes(item.key)
           ),
         };
-        //return <SideBar {...updateProps} />;
+        return <SideBar {...updateProps} />;
       },
       drawerPosition,
       contentOptions: {
-        activeTintColor: colors.primary,
-        activeBackgroundColor: colors.grey25,
-        inactiveTintColor: colors.bgLoginContainer,
+        activeTintColor: colors.white,
+        activeBackgroundColor: colors.grey50,
+        inactiveTintColor: colors.greyText,
       },
     }
   );
