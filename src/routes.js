@@ -33,7 +33,6 @@ const hiddenDrawerItems = ['Stack'];
  */
 const AppStack = createStackNavigator(
   {
-    Main,
     Cadastro,
     SucessoCadastro,
   },
@@ -64,9 +63,6 @@ export const AppDrawer = (drawerPosition) =>
         navigationOptions: {
           title: 'Criar ocorrência',
           // eslint-disable-next-line react/prop-types
-          drawerIcon: ({ tintColor }) => (
-            <WarningIcon name='warning' size={16} color={tintColor} />
-          ),
         },
       },
       Configuracoes: {
@@ -74,51 +70,30 @@ export const AppDrawer = (drawerPosition) =>
         navigationOptions: {
           title: 'Configurações',
           // eslint-disable-next-line react/prop-types
-          drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name='settings' size={16} color={tintColor} />
-          ),
         },
       },
       CriarOcorrencia: {
         screen: CriarOcorrencia,
         navigationOptions: {
-          title: 'CriarOcorrencia',
+          title: 'Criar Ocorrencia',
           // eslint-disable-next-line react/prop-types
-          drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name='bell' size={16} color={tintColor} />
-          ),
         },
       },
       NovaOcorrencia: {
         screen: NovaOcorrencia,
         navigationOptions: {
-          title: 'NovaOcorrencia',
+          title: 'Nova Ocorrencia',
           // eslint-disable-next-line react/prop-types
-          drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name='bell' size={16} color={tintColor} />
-          ),
         },
       },
       MensagemDireta: {
         screen: MensagemDireta,
         navigationOptions: {
-          title: 'MensagemDireta',
+          title: 'Mensagem Direta',
           // eslint-disable-next-line react/prop-types
-          drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name='bell' size={16} color={tintColor} />
-          ),
         },
       },
-      SucessoOcorrenciaEnviada: {
-        screen: SucessoOcorrenciaEnviada,
-        navigationOptions: {
-          title: 'SucessoOcorrenciaEnviada',
-          // eslint-disable-next-line react/prop-types
-          drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name='bell' size={16} color={tintColor} />
-          ),
-        },
-      },
+
       Stack: AppStack,
     },
     {
