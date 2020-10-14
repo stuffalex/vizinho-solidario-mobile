@@ -20,7 +20,6 @@ import Configuracoes from '~/screens/Configuracoes';
 import Ocorrencias from '~/screens/Ocorrencias';
 import SucessoOcorrenciaEnviada from '~/screens/SucessoOcorrenciaEnviada';
 import CriarOcorrencia from '~/screens/CriarOcorrencia';
-import Ocorrencia from '~/screens/Ocorrencia';
 import NovaOcorrencia from '~/screens/NovaOcorrencia';
 
 /**
@@ -34,6 +33,7 @@ const hiddenDrawerItems = ['Stack'];
  */
 const AppStack = createStackNavigator(
   {
+    Main,
     Cadastro,
     SucessoCadastro,
   },
