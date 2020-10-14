@@ -2,25 +2,60 @@
   "expo": {
     "name": "VizinhoSolidario",
     "slug": "VizinhoSolidario",
-    "version": "1.0.0",
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.17",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/splash.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#01A0A0"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "checkAutomatically": "ON_LOAD"
+    },
+    "ios": {
+      "requireFullScreen": true,
+      "bundleIdentifier": "com.fabrica.vizinhosolidario",
+      "infoPlist": {
+        "UIUserInterfaceStyle": "Light"
+      },
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.fabruca.vizinhosolidario",
+      // "googleServicesFile": "./google-services.json",
+      "splash": {
+        "image": "./assets/splash.png",
+        "resizeMode": "cover",
+        "backgroundColor": "#01A0A0"
+      },
+      "adaptiveIcon": {
+        "backgroundColor": "#01A0A0"
+      }
+    },
+    "notification": {
+      "icon": "./assets/splash.png",
+      "color": "#000000",
+      "iosDisplayInForeground": true
     },
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
+    "androidShowExponentNotificationInShellApp": true,
+    "androidStatusBar": {
+      "backgroundColor": "#01A0A0"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "androidNavigationBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#f8f6f9"
+    },
+
   }
 }

@@ -30,7 +30,7 @@ const Gradient = styled(LinearGradient).attrs(props => ({
 
   elevation: 24,
 }))`
-  border-radius: 5;
+  border-radius: 20;
   width: 100%;
   height: 100%;
   justify-content: center;

@@ -2,23 +2,27 @@ import styled from 'styled-components/native';
 import colors from '~/styles/colors';
 
 export const Container = styled.View`
-  padding: 0 15px;
-  height: 46px;
+  margin-left: -55px;
+  height: 150px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.01);
   background: rgba(0, 0, 0, 0.01);
   border-bottom-width: 1px;
   border-bottom-color: rgba(255, 255, 255, 0.6);
-  border-radius: 3px;
+  border-radius: 8px;
   flex-direction: row;
-  align-items: center;
+  bottom: 30%;
+  background-color: #E9ECEB;
+
 `;
 export const TextInput = styled.TextInput.attrs(props => ({
-  placeholderTextColor: 'rgba(255,255,255, 0.6)',
-  secureTextEntry: props.password,
+  placeholderTextColor: '#929494',
 }))`
   flex: 1;
   font-size: 15px;
   font-family: 'montserrat-regular';
   font-weight: bold;
-  margin-left: 10px;
-  color: ${colors.white};
+  flex-direction: row;
+  color: #929494;
+  width: 100%;
 `;
