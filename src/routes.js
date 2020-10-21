@@ -15,11 +15,13 @@ import SignIn from '~/screens/Auth/SignIn';
  */
 import Main from '~/screens/Main';
 import Cadastro from '~/screens/Cadastro';
-import SucessoCadastro from '~/screens/SucessoCadastro'
-import Configuracoes from '~/screens/Configuracoes'
-import Ocorrencias from '~/screens/Ocorrencias'
-import Mensagem from '~/screens/Mensagem'
-import ConfiguracoesBotaoPanico from '~/screens/ConfiguracoesBotaoPanico'
+import SucessoCadastro from '~/screens/SucessoCadastro';
+import Configuracoes from '~/screens/Configuracoes';
+import Ocorrencias from '~/screens/Ocorrencias';
+import Mensagem from '~/screens/Mensagem';
+import ConfiguracoesBotaoPanico from '~/screens/ConfiguracoesBotaoPanico';
+// import Notificacoes from '~/screens/Notificacoes';
+
 
 /**
  * Page Remove Drawer Menu
@@ -58,6 +60,15 @@ export const AppDrawer = drawerPosition =>
           ),
         },
       },
+      // Notificacoes: {
+      //   screen: Notificacoes,
+      //   navigationOptions: {
+      //     title: 'Notificação',
+      //     drawerIcon: ({ tintColor }) => (
+      //       <DrawerIcon name="bell" size={16} color={tintColor} />
+      //     ),
+      //   },
+      // },
       Ocorrencias: {
         screen: Ocorrencias,
         navigationOptions: {

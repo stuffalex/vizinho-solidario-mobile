@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, RefreshControl, Alert, Text } from 'react-native';
+import { Alert, FlatList, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { withNavigationFocus } from 'react-navigation';
 import { ScreenOrientation } from 'expo';
 import Layout from '~/components/_layouts/Portrait';
 import Header from '~/components/Header';
-import Sos from '~/components/Svg/Sos'
-import ButtonSave from '~/components/ButtonSave/ButtonSave';
+import { Switch } from 'react-native-gesture-handler';
+import ButtonSend from '~/components/ButtonSend/ButtonSend'
+
 
 
 
 
 import {
-SosButton,
-Tittle,
-TitleWrapper,
-TextWrapper,
-NotificationWrapper,
-ButtonCadastrar,
+  Container,
+  Wrapper,
+  WrapperSafe,
+  ItemWrapper,
+  ItemText,
+  ItemSwitchContainer,
+  SalvarButton,
+  BtnText
 } from './styles';
-import { View } from 'react-native';
 
 function Configuracoes({ navigation, isFocused }) {
   const [loading, setLoading] = useState(true);
@@ -46,28 +48,67 @@ function Configuracoes({ navigation, isFocused }) {
 
   return (
     <Layout navigation={navigation}>
-      <View>
-
-      <Header >Configurações</Header>
-      <TitleWrapper>
-        <Tittle>teste</Tittle>
-      </TitleWrapper>
-      <TitleWrapper></TitleWrapper>
-      <TitleWrapper></TitleWrapper>
-      <TitleWrapper></TitleWrapper>
-
-        <TextWrapper> Aguarde sua aprovação no bairro para que possa acessar ao sistema</TextWrapper>
-      <TitleWrapper></TitleWrapper>
-      <ButtonCadastrar>
-            <ButtonSave
-              onPress={() => {
-                navigation.navigate('SignIn');
-              }}
-                name="Ok"
-                upper
-              />
-          </ButtonCadastrar>
-      </View>
+      <Header >Configurações de notificações</Header>
+      <Container>
+        <Wrapper>
+          <WrapperSafe>
+            <ItemWrapper>
+              <ItemText>Assalto/violência</ItemText>
+              <ItemSwitchContainer>
+                <Switch
+                  hitSlop={{ left: 20, top: 20, bottom: 20, right: 20 }}
+                  value={true}
+                />
+              </ItemSwitchContainer>
+            </ItemWrapper>
+            <ItemWrapper>
+              <ItemText>Pessoa/veículo estranho</ItemText>
+              <ItemSwitchContainer>
+                <Switch
+                  hitSlop={{ left: 20, top: 20, bottom: 20, right: 20 }}
+                  value={true}
+                />
+              </ItemSwitchContainer>
+            </ItemWrapper>
+            <ItemWrapper>
+              <ItemText>Pessoa/veículo estranho</ItemText>
+              <ItemSwitchContainer>
+                <Switch
+                  hitSlop={{ left: 20, top: 20, bottom: 20, right: 20 }}
+                  value={true}
+                />
+              </ItemSwitchContainer>
+            </ItemWrapper>
+            <ItemWrapper>
+              <ItemText>Problemas de infraestrutura</ItemText>
+              <ItemSwitchContainer>
+                <Switch
+                  hitSlop={{ left: 20, top: 20, bottom: 20, right: 20 }}
+                  value={true}
+                />
+              </ItemSwitchContainer>
+            </ItemWrapper>
+            <ItemWrapper>
+              <ItemText>Viagem</ItemText>
+              <ItemSwitchContainer>
+                <Switch
+                  hitSlop={{ left: 20, top: 20, bottom: 20, right: 20 }}
+                  value={true}
+                />
+              </ItemSwitchContainer>
+            </ItemWrapper>
+            <SalvarButton
+            onPress={() => {
+              Alert.alert('Salvado com sucesso');
+            }}
+            name="Salvar"
+            upper
+            >
+              <BtnText>Salvar</BtnText>
+            </SalvarButton>
+          </WrapperSafe>
+        </Wrapper>
+      </Container>
     </Layout>
   );
 }

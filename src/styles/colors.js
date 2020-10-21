@@ -23,6 +23,7 @@ export default {
   white: '#FFFFFF',
   bgPrimary: '#f8f6f9',
   bgLinear: ['#0D7F7F', '#0D7F7F'],
+  bgNotLinear:'#0D7F7F',
   bgLoginContainer: '#392245',
   loginContainer: 'rgba(57,34,69,0.7)',
 };
