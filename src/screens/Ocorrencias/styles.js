@@ -8,6 +8,8 @@ export const Container = styled.View`
   justify-content: center;
   align-items: flex-start;
   padding-left: 100;
+  background-color: ${colors.bgPrimary};
+
 
 `;
 export const Tittle = styled.Text`

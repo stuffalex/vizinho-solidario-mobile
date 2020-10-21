@@ -1,59 +1,64 @@
 import styled from 'styled-components/native';
-import { ms, font } from '~/utils/scale';
+import { RectButton } from 'react-native-gesture-handler';
 
 import colors from '~/styles/colors';
-
 export const Container = styled.View`
   flex: 1;
   background-color: ${colors.bgPrimary};
 `;
 
-export const ListWrapper = styled.SafeAreaView`
-  margin-top: ${ms(0)};
-  margin-right: ${ms(10)};
-  margin-left: ${ms(10)};
+export const Wrapper = styled.View`
   flex: 1;
-  padding: 0;
-  background-color: ${colors.bgPrimary};
-`;
-export const SosButton = styled.View`
-  height: 10;
-  margin-left: 120; 
+  padding: 0 20px;
 `;
 
-export const Tittle = styled.Text`
-  color: ${colors.black};
+export const WrapperSafe = styled.SafeAreaView``;
+
+export const TitleContainer = styled.View`
+  margin: 20px 0 0 0;
+`;
+
+export const TitleText = styled.Text`
+  color: ${colors.primary60};
+  font-size: 16px;
   font-family: 'montserrat-bold';
-  font-size: ${Platform.OS === 'ios' ? '13px' : '15px'};
-  font-weight: 500;
   text-transform: uppercase;
 `;
 
-export const TitleWrapper = styled.View`
-  width: 100%;
-  height: -10px;
-  padding: 10px;
-  margin-left: 30;
+export const ItemWrapper = styled.View`
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0;
 `;
 
-export const NotificationWrapper = styled.View`
-  width: 100%;
-  height: 30px;
-  
-  margin-left: 60;
-`;
-export const TextWrapper = styled.Text`
-  color: ${colors.black};
+export const ItemText = styled.Text`
   font-family: 'montserrat-regular';
-  font-size: ${Platform.OS === 'ios' ? '13px' : '15px'};
-  font-weight: 200;
-  text-transform: uppercase;
-  margin-left: 100;
-  margin-right:60;
+  font-size: 14px;
+  color: ${colors.primary75};
+  flex: 0.85;
+  flex-wrap: wrap;
 `;
-export const ButtonCadastrar = styled.View`
-  marginTop: 20%;
-  height: 11.5%;
-  zIndex: 1;
+
+export const ItemSwitchContainer = styled.View`
+  padding: 10px 0;
+`;
+export const SalvarButton = styled(RectButton)`
+  margin-left: 25%;
+  width: 50%;
+  height: 12%;
+  bottom: -17%;
+  border-radius: 20;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${colors.bgNotLinear};
+`;
+export const BtnText = styled.Text`
+  color: ${colors.white};
+  margin-left: 30%;
+  font-size: 20px;
+  font-family: 'montserrat-bold';
 `;
 

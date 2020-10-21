@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {refreshControl, Alert, Text } from 'react-native';
+import { Alert, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { FlatList, Switch } from 'react-native-gesture-handler';
+import { Switch } from 'react-native-gesture-handler';
 
 import { withNavigationFocus } from 'react-navigation';
 import { ScreenOrientation } from 'expo';
