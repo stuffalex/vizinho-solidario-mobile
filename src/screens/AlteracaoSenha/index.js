@@ -4,34 +4,33 @@ import PropTypes from 'prop-types';
 import { withNavigationFocus } from 'react-navigation';
 import { ScreenOrientation } from 'expo';
 
-import LayoutBack from '~/components/_layouts/PortraitBack';
-import Header from '~/components/Header';
-import ButtonGradient from '~/components/Buttons/ButtonGradient';
-
 import { TextInput, View } from './styles';
 
 export function AlteracaoSenha({ navigation, isFocused }) {
   const [loading, setLoading] = useState(true);
-
-  app.put('/api/Usuario/trocasenha', async (req, res) => {
-    let response = await user.findOne({
-      where: { id: req.body.id, password: req.body.senhaAntiga },
-    });
-    if (response === null) {
-      res.send(JSON.stringify('Senha atual não confere'));
-    } else {
-      if (req.body.novaSenha === req.body.confNovaSenha) {
-        response.password = req.body.novaSenha;
-        response.save();
-        res.send(JSON.stringify('Senha atualizada com sucesso!'));
-      } else {
-        res.send(JSON.stringify('Nova Senha e Confirmação não conferem!'));
-      }
-    }
+  const [idUser, setIdUser] = useState(null);
+  const [senhaAtual, setSenhaAtual] = useState(null);
+  const [novaSenha, setNovaSenha] = useState(null);
+  const [confirmacaoNovaSenha, setConfirmacaoNovaSenha] = useState(null);
+  const [msg, setMsg] = useState(null);
+api.put
+  let response = await user.findOne({
+    where: { id: req.body.id, password: req.body.senhaAntiga },
   });
+  if (response === null) {
+    res.send(JSON.stringify('Senha atual não confere'));
+  } else {
+    if (req.body.novaSenha === req.body.confNovaSenha) {
+      response.password = req.body.novaSenha;
+      response.save();
+      res.send(JSON.stringify('Senha atualizada com sucesso!'));
+    } else {
+      res.send(JSON.stringify('Nova Senha e Confirmação não conferem!'));
+    }
+  }
 
-  async function sendForm() {
-    let response = await fetch(`${config.urlRoot}trocasenha`, {
+  export async function sendForm() {
+    let response = await fetch(`/api/Usuario/trocasenha`, {
       method: 'PUT',
       body: JSON.stringify({
         id: idUser,
@@ -93,12 +92,8 @@ export function AlteracaoSenha({ navigation, isFocused }) {
           placeholder='Confirmação da Nova Senha:'
           onChangeText={(text) => setConfirmacaoNovaSenha(text)}
         />
-        <TouchableOpacity
-          onPress={() => {
-            Alert.alert('Senha alterada com sucesso!');
-          }}
-        >
-          <Text>Trocar</Text>
+        <TouchableOpacity onPress={() => sendForm()}>
+          <Text>Trocar senha</Text>
         </TouchableOpacity>
       </View>
     </View>

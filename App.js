@@ -10,17 +10,21 @@ export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
   const [notification, setNotification] = useState({});
   useEffect(() => {
-    Notifications.addListener(notify => setNotification(notify.data));
+    Notifications.addListener((notify) => setNotification(notify.data));
     if (notification.origin === 'selected') {
       withNavigationFocus(Main);
     }
     SplashScreen.hide();
     async function loadPermissions() {
-      const { status: existingStatus } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
+      const { status: existingStatus } = await Permissions.getAsync(
+        Permissions.NOTIFICATIONS
+      );
       let finalStatus = existingStatus;
 
-      if(existingStatus !== 'granted'){
-        const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+      if (existingStatus !== 'granted') {
+        const { status } = await Permissions.askAsync(
+          Permissions.NOTIFICATIONS
+        );
         finalStatus = status;
       }
 
