@@ -5,7 +5,7 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 import { useSelector } from 'react-redux';
 import { Feather as DrawerIcon } from '@expo/vector-icons';
-import { AntDesign as WarningIcon } from '@expo/vector-icons'; 
+import { AntDesign as WarningIcon } from '@expo/vector-icons';
 
 import colors from './styles/colors';
 import SideBar from './components/SideBar';
@@ -22,7 +22,6 @@ import Mensagem from '~/screens/Mensagem';
 import ConfiguracoesBotaoPanico from '~/screens/ConfiguracoesBotaoPanico';
 // import Notificacoes from '~/screens/Notificacoes';
 
-
 /**
  * Page Remove Drawer Menu
  */
@@ -36,7 +35,7 @@ const AppStack = createStackNavigator(
   {
     Cadastro,
     SucessoCadastro,
-    ConfiguracoesBotaoPanico
+    ConfiguracoesBotaoPanico,
   },
   {
     headerMode: 'none',
@@ -48,7 +47,7 @@ const AppStack = createStackNavigator(
  * Registre aqui as screens
  * @param {state} drawerPosition left | right
  */
-export const AppDrawer = drawerPosition =>
+export const AppDrawer = (drawerPosition) =>
   createDrawerNavigator(
     {
       Main: {
@@ -56,7 +55,7 @@ export const AppDrawer = drawerPosition =>
         navigationOptions: {
           title: 'Home',
           drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name="home" size={16} color={tintColor} />
+            <DrawerIcon name='home' size={16} color={tintColor} />
           ),
         },
       },
@@ -75,7 +74,7 @@ export const AppDrawer = drawerPosition =>
           title: 'Criar ocorrência',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
-            <WarningIcon name="warning" size={16} color={tintColor} />
+            <WarningIcon name='warning' size={16} color={tintColor} />
           ),
         },
       },
@@ -85,7 +84,7 @@ export const AppDrawer = drawerPosition =>
           title: 'Enviar Mensagem',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
-            <WarningIcon name="message1" size={16} color={tintColor} />
+            <WarningIcon name='message1' size={16} color={tintColor} />
           ),
         },
       },
@@ -95,18 +94,18 @@ export const AppDrawer = drawerPosition =>
           title: 'Configurações',
           // eslint-disable-next-line react/prop-types
           drawerIcon: ({ tintColor }) => (
-            <DrawerIcon name="settings" size={16} color={tintColor} />
+            <DrawerIcon name='settings' size={16} color={tintColor} />
           ),
         },
       },
       Stack: AppStack,
     },
     {
-      contentComponent: props => {
+      contentComponent: (props) => {
         const updateProps = {
           ...props,
           items: props.items.filter(
-            item => !hiddenDrawerItems.includes(item.key)
+            (item) => !hiddenDrawerItems.includes(item.key)
           ),
         };
         return <SideBar {...updateProps} />;
@@ -121,7 +120,7 @@ export const AppDrawer = drawerPosition =>
   );
 
 export default (signedIn = false) => {
-  const { drawer } = useSelector(state => state.settings.screen);
+  const { drawer } = useSelector((state) => state.settings.screen);
   return createAppContainer(
     createSwitchNavigator(
       {
